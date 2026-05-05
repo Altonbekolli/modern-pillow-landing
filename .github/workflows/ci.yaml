@@ -17,15 +17,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-          cache-dependency-path: wui/package-lock.json
+          cache: yarn
+          cache-dependency-path: wui/yarn.lock
 
       - name: Install React dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
         working-directory: wui
 
       - name: Build React
-        run: npm run build
+        run: yarn build
         working-directory: wui
 
       - name: Setup PHP
