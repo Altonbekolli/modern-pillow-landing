@@ -1,73 +1,122 @@
-# React + TypeScript + Vite
+# SLEEM® Modern Pillow Landingpage
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Eine moderne, hochwertige Landingpage für das **SLEEM® Hybrid Pillow**.
 
-Currently, two official plugins are available:
+Live Website: **https://www.sleemhome.de/**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Das Projekt präsentiert die Marke SLEEM® und das Hybrid Pillow mit einem cleanen Design, mehrsprachigen Inhalten, Produktbildern, FAQ, Kontaktformular, Newsletter beziehungsweise Warteliste und rechtlichen Seiten.
 
-## React Compiler
+Die Website ist darauf ausgelegt, schnell, modern und vertrauenswürdig zu wirken. Besucher bekommen einen klaren Überblick über das Produkt und können direkt zur externen Verkaufsplattform weitergeleitet werden.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Überblick
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Dieses Repository besteht aus zwei Hauptteilen.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**Frontend**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Die Weboberfläche liegt im Ordner `wui` und wurde mit React, TypeScript und Vite gebaut.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Backend**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Das kleine PHP Backend liegt im Ordner `backend` und kümmert sich um Kontaktanfragen und Newsletter Anmeldungen per SMTP Mailversand.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Zusätzlich gibt es eine CI Pipeline über GitHub Actions, die den Frontend Build und die PHP Syntax prüft.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## Website
+
+Die produktive Website ist erreichbar unter: https://www.sleemhome.de/
+
+Die Website dient der Präsentation der Marke SLEEM® und leitet Besucher bei Interesse zum Produkt auf Amazon weiter.
+
+---
+
+## Tech Stack
+
+### Frontend
+
+React 19
+
+TypeScript 5
+
+Vite 7
+
+React Router
+
+i18next
+
+react-i18next
+
+SCSS Modules
+
+Sass
+
+ESLint
+
+### Backend
+
+PHP 8+
+
+PHPMailer
+
+SMTP Mailversand
+
+JSON API Endpoints
+
+### Tooling
+
+GitHub Actions
+
+Node.js 22 in der CI
+
+Yarn in der CI
+
+npm für lokale Paketverwaltung möglich
+
+---
+
+## Kontakt und rechtliche Hinweise
+
+Bei Fragen zur Website, zum Projekt oder zu rechtlichen Themen kann der Betreiber kontaktiert werden:
+info@sleemhome.de
+
+lle Inhalte dieser Website dienen der Präsentation der Marke SLEEM® und des Produkts. Käufe werden nicht direkt über diese Website abgeschlossen, sondern über externe Verkaufsplattformen.
+
+Für externe Links und Plattformen gelten die jeweiligen Bedingungen und Datenschutzrichtlinien der entsprechenden Anbieter.
+
+Alle Texte, Bilder, Logos, Designs und Markeninhalte gehören den jeweiligen Rechteinhabern. Eine Nutzung oder Weitergabe ist nur mit ausdrücklicher Zustimmung erlaubt.
+
+---
+## Status
+
+Produktive Landingpage für SLEEM®.
+
+Live unter:
+https://www.sleemhome.de/
+
+
+---
+
+## CI Pipeline
+
+Das Projekt nutzt GitHub Actions.
+
+Die Pipeline läuft bei Pushes auf `main` und bei Pull Requests nach `main`.
+
+Dabei werden das Repository ausgecheckt, Node.js eingerichtet, Frontend Dependencies installiert, der React/Vite Build ausgeführt, PHP eingerichtet und die PHP Syntax geprüft.
+
+Die Workflow Datei liegt hier:
+
+---
+
+## Installation
+
+In den Frontend Ordner wechseln:
+Dependencies installieren: `yarn install`
+
+Danach starten in /wui: `yarn dev`
+
+Die App läuft danach lokal unter: http://localhost:5173
