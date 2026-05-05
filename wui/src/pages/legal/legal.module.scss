@@ -1,0 +1,123 @@
+.list {
+  margin: 10px 0 0 18px;
+  padding: 0;
+  li {
+    margin: 6px 0;
+    line-height: 1.6;
+    color: var(--text-main);
+  }
+}
+
+.miniCard {
+  margin-top: 10px;
+  padding: 14px 14px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 85%, var(--border));
+}
+
+.nameSmall {
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+
+.legalPage {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 56px) clamp(16px, 3vw, 24px);
+}
+
+.header {
+  margin-bottom: 18px;
+}
+
+.title {
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.subtitle {
+  margin: 10px 0 0 0;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: clamp(18px, 3vw, 26px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  animation: slideIn 520ms var(--ease-out) both;
+}
+
+.section {
+  padding: 6px 0;
+
+  h2 {
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 12px 0;
+  }
+}
+
+.block {
+  p {
+    margin: 6px 0;
+    color: var(--text-main);
+    line-height: 1.6;
+  }
+}
+
+.name {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.muted {
+  color: var(--text-muted) !important;
+}
+
+.mono {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface) 70%, var(--border));
+  border: 1px solid var(--border);
+  display: inline-block;
+}
+
+.link {
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--primary) 45%, transparent);
+  transition: opacity var(--t-fast) var(--ease-out), border-color var(--t-fast) var(--ease-out);
+
+  &:hover {
+    opacity: 0.85;
+    border-bottom-color: color-mix(in srgb, var(--primary) 75%, transparent);
+  }
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 18px 0;
+}
+.card {
+
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

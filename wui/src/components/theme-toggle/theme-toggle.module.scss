@@ -1,0 +1,23 @@
+.themeBtn {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface) 80%, transparent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform .18s ease, background .18s ease;
+  &:hover{
+    transform: translateY(-1px);
+    background: color-mix(in oklab, var(--surface) 92%, transparent);
+  }
+}
+
+.themeIcon {
+  width:20px;
+  height:20px;
+  display:block;
+  transition: transfrom 200ms ease;
+}
